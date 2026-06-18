@@ -1,0 +1,457 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #f0f2f5;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 30px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    grid-column: 1/-1;
+}
+
+.search-bar {
+    position: relative;
+    flex: 1;
+    max-width: 500px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 12px 45px;
+    border: 2px solid #e5e5e5;
+    border-radius: 15px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-bar input:focus {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 5px rgba(139, 92, 246, 0.5);
+}
+
+.search-bar i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+}
+
+.header-icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.icon-btn {
+    width: 40px;
+    height: 40px;
+    border-radius:50%;
+    border: none;
+    background: #f3f4f6;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.icon-btn:hover {
+    background: #e5e7eb;
+}
+
+.notification-dot {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 8px;
+    height: 8px;
+    background: #F9242F;
+    border-radius: 50%;
+}
+
+.main-content {
+    padding-right: 20px;
+}
+
+.title-section {
+    margin-bottom: 40px;
+}
+
+.greeting {
+    font-size: 1rem;
+    color: #F527B7;
+    margin-bottom: 10px;
+}
+
+.title-section h1 {
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.title-section h1 .task-count {
+    color: #27F5E4;
+}
+
+.add-btn {
+    background: #FC0FC0;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 15px;
+    transition: all 0.3s ease;
+    border-radius: 12px;
+}
+
+.add-btn:hover {
+    background: #FF69B4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+.notes {
+    margin-bottom: 50px;
+}
+
+.notes-box {
+    background: #ffffff;
+    padding: 18px 20px;
+}
+
+.sticky-note {
+    background: #fdefb2;
+    border-radius: 20px;
+    width: 650px;
+    height: 100px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+
+
+}
+
+.section {
+    margin-bottom: 40px;
+
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: 22px;
+    font-weight: 550;
+    color: #1f2937;
+}
+
+.task-item {
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-radius: 15px;
+    padding: 18px 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: 0.3s ease;
+}
+
+.task-item:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateX(5px);
+}
+
+.task-checkbox {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #27F5E4;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.task-checkbox.completed {
+    background: #27F5E4;
+    position: relative;
+}
+.task-checkbox.completed:after{
+    content:'✓';
+    position: absolute;
+    color: #ffffff;
+    font-size: 12px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.task-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.task-title {
+    font-size: 15px;
+    color: black;
+    margin-bottom: 5px;
+    font-weight: 500;
+
+}
+
+.task-title.completed {
+    text-decoration: line-through;
+    color: #9ca3af;
+}
+
+.status-badge {
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-pending {
+    background: #fef3c7;
+    color: #f59e0b;
+}
+
+.status-in-progress {
+    background: #dbeafe;
+    color: #3b82f6;
+}
+
+.status-completed {
+    background: #d1fae5;
+    color: #10b981;
+}
+
+.status-cancelled {
+    background: #fee2e2;
+    color: #ef4444;
+}
+
+.priority-badge {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.priority-urgent {
+    color:#dc2626;
+}
+
+.priority-upcoming {
+    color:#F0E13A;
+}
+.priority-later {
+    color:#A4F03A;
+
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background:#8b5cf6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.sidebar {
+    background: #f9fafb;
+    border-radius: 20px;
+    padding: 25px;
+}
+
+.sidebar-section {
+    margin-bottom: 25px;
+
+}
+
+.sidebar-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 15px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.stat-label {
+    color: #6b7280;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700%;
+    color: #1f2937;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #8b5cf6;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    /* determines which element appears on top and which stays behind, higher number go on top */
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.modal-header {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: black
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.form-group input, .form-group select {
+    padding: 12px;
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid #e5e7eb;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus, .form-group select:focus {
+    border-color: #FC0FC0;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: #FC0FC0;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background:#FF69B4;
+    transform: translateY(-2px);
+    /* repositions an element vertically up or down along the Y-axis from where it would normally sit on the website. Positive values move the element downward, negative values move the element upward. You can use absolute units (px) or relative units like rem , or percentages */
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+.btn-secondary {
+    background: #A9A9A9;
+    color: #ffffff;
+}
+
+.btn-secondary:hover {
+    background:#e5e7eb;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .task-item {
+        flex-wrap: wrap;
+    }
+
+    .task-content {
+        flex-basis: calc(100% - 40px);
+    }
+}
+
+/* media changes how the layout behaves when the screen gets smaller on a laptop. media-width basically says only apply these rules when the screen width is 1024 pizels or smaller, if larger then ignor this code. When the screen gets smaller, the grid layout columns change to be stacked on top of each other instead of side by side using 1fr. Appearance changes so that everything appears in a single vertical column instead of multiple columns. */
